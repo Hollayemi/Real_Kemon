@@ -2,7 +2,7 @@
 
 // localhost
 $servername = "localhost";
-$dbName = "auction";
+$dbName = "market";
 $username = "root";
 $password = "";
 

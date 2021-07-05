@@ -126,4 +126,62 @@
         // }
     }
 
+
+
+
+
+
+
+    
+if(isset($_POST['loginBtn'])){
+	$myInputEmail=testInput($_POST['Email']);
+	$inputPassword=testInput($_POST['Password']);
+    $result =   usersInfo($conn,$myInputEmail);
+    
+	if($result){
+		$chk_password=$result['password'];
+		$chk_email=$result['email'];
+		$inputUsername = $result['username'];
+
+		$chk_id=$result['id'];
+		$_SESSION['user_info_id'] = $chk_id;
+		$hashedPassword=md5($_POST['Password']);
+		if($chk_password==$hashedPassword && $inputUsername=="OnlyTheAdmin"){
+			$chk_email=$result['email'];
+			echo "Status:Logged in";
+			header("location:Admin2.php");
+			}
+		elseif($chk_password==$hashedPassword && $myInputEmail==$chk_email){
+			$chk_username=$result['username'];
+			$_SESSION['user_info_id']=$chk_id;
+			$_SESSION['user_info']=$chk_email;
+			echo "Status:Logged in";
+			header("location:Register.php");
+	}else{
+		$knwO = "popo";
+		echo "<div class='loginStatus'>
+			<h4>Status:</h4>
+			<h5>you are not logged in </h5>
+			<p>( Incorrect Password or Email )</p>
+		</div>";
+	}
+	}else{
+		$knwO = "popo";
+		echo "<div class='loginStatus'>
+			    	<h4>Status:</h4>
+					<h5>you are not logged in </h5>
+					<p>(Email not registered)</p>
+			 </div>";
+
+	}
+}
+if(isset($_GET['err-using-google'])){
+	$knwO = "popo";
+	echo "<div class='loginStatus'>
+			<h4>Status:</h4>
+			<h5>you are not logged in </h5>
+			<p>( G-mail not registered )</p>
+		</div>";
+}
+
 ?>
