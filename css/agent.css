@@ -1,0 +1,17 @@
+.agnEdit, .agnSave{
+    background-color: rgb(16, 148, 255);
+    height:50px;
+    line-height:50px;
+    text-align: center;
+    width:100px;
+    color:#fff;
+    border-radius:5px;
+    margin-top:40px;
+    font-size:20px;
+    cursor: pointer;
+}
+.agnSave{
+    border:none;
+    /* position: absolute; */
+    display:none;
+}

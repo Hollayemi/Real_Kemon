@@ -1,0 +1,310 @@
+body {
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.eaglesLogos img{
+    height:50px !important;
+    width:50px !important;
+}
+.sec{
+    margin-top:-20px;
+    display:flex;
+    justify-content: space-around;
+}
+.leftSidenav{
+    background-color: rgb(1, 55, 100) !important;
+    width:20%;
+    position:fixed;
+    left:0px;
+    top:30px;
+    transition: 0.4s;;
+    height:101%;
+}
+ul.sidenav {
+    list-style-type: none;
+    position: relative;
+    width:100%;
+    padding: 0;
+    /* background-color: #000; */
+    opacity:1 !important;
+    height: 100%;
+    overflow: auto;
+}
+
+ul.sidenav li a {
+	font-size:17px;
+    display: block;
+    color: #fff;
+    line-height:80px;
+    padding-left:30px;
+    text-decoration: none;
+    transition:.5s;
+}
+ul.sidenav li a:hover{
+    padding-left:40px;
+}
+ 
+ul.sidenav li a.active {
+    background-color: #ffffff;
+    border-left: 5px solid #4CAF50;
+    color: rgb(0, 0, 0);
+    margin-left:5px;
+}
+
+ul.sidenav li a:hover:not(.active) {
+    background-color: rgb(93, 102, 230);
+    color: white;
+}
+ul.sidenav li a .faHeader{
+    transition:.3s;
+}
+ul.sidenav li a:hover:not(.active) .faHeader {
+    color: white;
+}
+.active{
+	background-color: #4CAF50;
+    color: white;
+}
+
+
+
+/*------------------------------dashboard-------------------------------------------*/
+.content{
+    width:70%;
+    margin-left:25%;
+    
+
+}
+.content div{
+    width:100%;
+    display: flex;   
+    justify-content: space-between;
+}
+.content a{
+    min-width:270px !important;
+    position: relative;
+    background-color:rgb(77, 79, 196);
+    height:150px;
+    overflow: hidden;
+    border-radius:4px;
+    transition:.3s;
+    box-shadow: -2px 10px 20px 5px rgba(0, 0, 0, 0.199);
+}
+.content div a h4{ 
+    text-align: center !important;
+    width:100%;
+    line-height:50px;
+    position: absolute;
+    top:-21px;
+    transition:.3s;
+    color:#fff;
+    background-color:#48a5e4;
+    box-shadow: -10px 10px 30px 5px rgba(0, 0, 0, 0.299);
+}
+
+.content div a h5{ 
+    color:rgb(255, 255, 255);
+    margin-top:80px;
+    font-size:30px;
+    width:100%;
+    text-align: center;
+}
+.adm{
+    position: fixed;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    width:100%;
+    top:0;
+    height:50px;
+    transition:.3s;
+    font-size:15px;
+    text-align:center;
+    z-index:40000 !important;   
+    background-color:#48a5e4;
+    color:#fff;
+}
+.adm:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+}
+
+.faHeader{
+    color:#48a5e4;
+    margin-right:20px;
+    display: block;
+}
+
+.contain{
+    width:75%;
+    margin-left:22%;
+    margin-top:70px;
+    overflow-x: auto;
+    height:80% !important;
+}
+
+    
+.contain::-webkit-scrollbar{
+    width:9px;
+    background-color:transparent;
+  }
+  .contain::-webkit-scrollbar-button{
+    background-color: rgb(189, 189, 194);
+    display: none;
+    
+  }
+  .contain::-webkit-scrollbar-thumb{
+    background-color: rgb(18, 151, 204);
+    border-radius:30px;
+    width:10px;
+  } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1158px){
+    .leftSidenav{
+        width:25%;
+    }
+    .content{
+        width:75%;
+        margin-left:28%;
+    }
+}
+.menuBars{
+    position:absolute;
+    margin-left:20px;
+    display:none;
+}
+@media screen and (max-width:1020px){
+    .content{
+        margin-left:10%;
+    }
+    .leftSidenav{
+        margin-left:-70%;
+        width:50%;
+        z-index:500;
+    }
+    .content{
+        width:98%;
+        margin-left:1%;
+    }
+    .menuBars{
+        display:block;
+    }
+}
+@media screen and (max-width:860px){
+    .content div{
+        display: flex;
+        flex-flow: column;
+        width:60%;
+        margin-left:20%;
+    }    
+    .content div a{
+        height:200px;
+        margin-top:70px;
+    }
+    .content div a h5{
+        margin-top:100px;
+    }
+    .contain{
+        width:95%;
+        margin-left:2%;
+        overflow-x: auto;
+    }
+
+}
+
+@media screen and (max-width:500px){
+    .content div{
+        display: flex;
+        flex-flow: column;
+        width:80%;
+        margin-left:10%;
+    }    
+    .content div a{
+        height:200px;
+        margin-top:70px;
+    }
+    .content div a h5{
+        margin-top:100px;
+    }
+
+}
+
+.content a:hover{
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.content a:hover h4{
+    transform: scale(1.1);
+}
+
+.myAlertbox{
+    opacity:0;
+    padding:10px;
+    position:fixed;
+    top:20%;
+    width:30%;
+    left:35%;
+    margin-left:5%;
+    align-items: center;
+    z-index:300000;
+    box-shadow: -10px 10px 30px 5px rgba(0, 0, 0, 0.17);
+    animation: alertbox 1s ease-in 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes alertbox{0%{opacity:0;top:20%;}100%{opacity:1;top:25%;}}
+  .myAlertbox h2{
+    font-size:20px;
+    text-align: center;
+  }
+  .myAlertbox h2 i{
+    font-size:70px;
+  }
+  .myAlertbox h5{
+    font-size:18px;
+    text-align: center;
+  }
+  .errorAlert{
+    border:1px solid rgb(253, 7, 7);
+    color:#fff;
+    background-color: red;
+  }
+  .warningAlert{
+    border:1px solid rgb(245, 164, 15);
+    color:#fff;
+    background-color: rgb(255, 145, 0);
+  }
+  .successAlert{
+    border:1px solid rgb(238, 211, 176);
+    color:rgb(238, 211, 176);;
+    background-color: rgb(32, 70, 40);
+  }
+  .notice{
+    border:1px solid rgb(182, 232, 193);
+    color:rgb(0, 0, 0);
+    background-color:rgb(182, 232, 193);
+  }
+  .mainBox{
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index:300000;
+    transition:5s;
+  }
+@media screen and (max-width:1200px){.myAlertbox{width:60%; left:20%}}
+@media screen and (max-width:750px){.myAlertbox{width:85%; left:-1%}}
