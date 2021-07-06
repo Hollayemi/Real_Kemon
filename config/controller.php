@@ -90,42 +90,26 @@
         }
     }
 
-    // forgot password
-    if(isset($_POST['action']) && $_POST['action'] === 'forgot'){
-        $email = $user->testInput($_POST['email']);
-        $userFound = $user->currentUser($email);
-        // if($userFound != null){
-        //     $token =uniqid();
-        //     $token = str_shuffle($token);
-        //     $user->forgot_password($token,$email);
-        //     // try{
-        //     //     $mail->isSMTP();
-        //     //     $mail->Host = 'smtp.gmail.com';
-        //     //     $mail->SMTPAuth = true;
-        //     //     $mail->Username   = Database::USERNAME;                    
-        //     //     $mail->Password   = Database::PASSWORD;                              
-        //     //     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
-        //     //     $mail->Port       = 587;
 
-        //     //     $mail->setFrom(Database::USERNAME,'Xpress Website');
-        //     //     $mail->addAddress($email);
 
-        //     //     $mail->isHTML(true);
-        //     //     $mail->Subject = 'Reset Password';
-        //     //     $mail->Body = '<h3>Click the link below to reset your password. <br>
-        //     //         <a href="http://localhost/Work%20Folder/particle/reset-pass.php?email='.$email.'&token='.$token.'">Click here to Reset Password</a>
-        //     //         <br>Regards<br>Xpress Website</h3>';
-        //     //     $mail->send();
-        //     //     echo $user->displayMessage('success','A resest link has been sent to your email!');
 
-        //     // }catch(Exception $e){
-        //     //     echo $user->displayMessage('danger','Oops something went wrong! please try again');
-        //     // }
-        // }else{
-        //     echo $user->displayMessage('warning','This Email is not registered!');
-        // }
-    }
 
+
+
+
+
+
+
+
+
+function loginChk($conn,$email)
+{
+    $sql = "SELECT email, password FROM users WHERE email = :email";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute(['email'=>$email]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $row;
+}
 
 
 
@@ -136,7 +120,9 @@
 if(isset($_POST['loginBtn'])){
 	$myInputEmail=testInput($_POST['Email']);
 	$inputPassword=testInput($_POST['Password']);
-    $result =   usersInfo($conn,$myInputEmail);
+    $result =   loginChk($conn,$myInputEmail);
+
+    echo $result['password'];
     
 	if($result){
 		$chk_password=$result['password'];

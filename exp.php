@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(session_destroy()){
-        header('Location:login_form.php');
+        header('Location:signin.php');
     }
 
 ?>

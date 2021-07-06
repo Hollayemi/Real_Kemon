@@ -1,3 +1,6 @@
+<?php 
+	require "config/controller.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 		<head>
@@ -11,7 +14,6 @@
 	<body class="loginBody">
 	<section id="loginSec">
 		<?php 
-		
 		require_once('functions.php');
 		// require_once('GoogleApi/vendor/autoload.php');
 		// require_once('GoogleApi/Gconfig.php');
